@@ -16,7 +16,7 @@ class Timer {
   minutesCalculator(seconds) {
     const minuteWord = seconds > 120 ? `minutes` : 'minute';
     const leftOverSeconds = seconds % 60;
-    const secondWord = leftOverSeconds > 1 ? `seconds` : 'second';
+    const secondWord = leftOverSeconds == 1 ? `second` : 'seconds';
     const minutes = (seconds - leftOverSeconds) / 60;
     return `${minutes} ${minuteWord} and ${leftOverSeconds} ${secondWord}`;
   }
