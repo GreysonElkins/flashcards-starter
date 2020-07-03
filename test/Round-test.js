@@ -91,12 +91,15 @@ describe('Round', () => {
     });
     
     it('Can end the round and print a specific message', () => {
+      round.timer.startTime = 1593736186337;
       round.takeTurn('you don\'t');
       round.takeTurn('you can eat several');
       round.takeTurn('robots');
       const message = round.endRound();
+      round.timer.stopTime = 1593736267577;
+      console.log(round.timer);
       expect(message).to.equal('**Round over!** You answered ' +
-       `100% of the questions correctly!`);
+        `100% of the questions correctly in 1 minute and 21 seconds!`);
     });
 
     it('should set currentCard to undefined' + 

@@ -1,11 +1,13 @@
 const Turn = require('./Turn');
 const data = require('./data');
+const Timer = require('./Timer');
 class Round {
   constructor(deck) {
     this.deck = deck;
     this.turns = 0;
     this.currentCard = deck ? deck.cards[this.turns] : undefined; 
     this.incorrectGuesses = [];
+    this.timer = new Timer;
   }
 
   returnCurrentCard = () => {
@@ -30,7 +32,8 @@ class Round {
   }
 
   endRound = () => {
-    return `**Round over!** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
+    this.timer.stop();
+    return `**Round over!** You answered ${this.calculatePercentCorrect()}% of the questions correctly in ${this.timer.getTimePassed()}!`;
   }
 }
 
