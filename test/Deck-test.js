@@ -52,4 +52,24 @@ describe('Deck', () => {
     const cardCount2 = deck2.countCards()
     expect(cardCount2).to.equal(3);
   });
+
+  it('can create Card objects from objects not defined with the card class', () => {
+  const pile = [{
+    id: 1,
+    question: "How do you fly?",
+    answers: ["you don't", "you flap your arms", "you steal an airplane"],
+    correctAnswer: "you don't"
+    }, {
+    id: 2,
+    question: "Can I eat a hotdog?",
+    answers: ["Yes", "No", "You can eat several"],
+    correctAnswer: "You can eat several"
+    }];
+  
+  const deck = new Deck(pile);
+  expect(deck.cards[0]).to.deep.equal(cards[0]);
+  expect(deck.cards[0]).to.be.an.instanceOf(Card);
+  expect(deck.cards[1]).to.deep.equal(cards[1]);
+  expect(deck.cards[1]).to.be.an.instanceOf(Card);
+  });
 });

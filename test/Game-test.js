@@ -30,10 +30,6 @@ describe.skip('Game', ()=> {
   });
 
   describe('Start Method', () => {
-    it('should create cards', () => {
-      game.start(cards);
-      expect(game.deck.cards[0]).to.be.an.instanceOf(Card);
-    });
 
     it('should put cards in a deck', () => {
       game.start(cards);
