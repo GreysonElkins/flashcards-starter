@@ -35,4 +35,12 @@ describe('Card', () => {
   it('should have an id', () => {
     expect(card.id).to.equal(1);
   });
+
+  it('should be able to store different, ids, questions and answers', () => {
+    const card2 = new Card(2, 'how\'s my hair today?', ['good', 'bad'], 'good');
+    expect(card2.id).to.equal(2);
+    expect(card2.question).to.equal('how\'s my hair today?');
+    expect(card2.answers).to.deep.equal(['good', 'bad']);
+    expect(card2.correctAnswer).to.equal('good');
+  })
 });
