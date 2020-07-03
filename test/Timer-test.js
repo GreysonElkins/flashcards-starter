@@ -34,7 +34,7 @@ describe('Timer', () => {
     const timer = new Timer();
     timer.startTime = 1593736186337;
     timer.stopTime = 1593736267577;
-    result = timer.getTimePassed();
+    const result = timer.getTimePassed();
     expect(result).to.equal(`1 minute and 21 seconds`)
   });
 });
