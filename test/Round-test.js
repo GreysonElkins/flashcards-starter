@@ -96,7 +96,7 @@ describe('Round', () => {
       round.takeTurn('robots');
       const message = round.endRound();
       expect(message).to.equal('**Round over!** You answered ' +
-       `100% of the questions correctly!`);
+        `100% of the questions correctly in 0 seconds!`);
     });
 
     it('should set currentCard to undefined' + 
